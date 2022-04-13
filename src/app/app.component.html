@@ -1,0 +1,28 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+<div class="container">
+  <div class="row">
+  
+    <div class="col-sm-6">
+      <h3>Book Applications</h3>
+      <ul class="nav nav-tabs right-align" routerLinkAction="active">
+       <ng-template [ngIf]="!_auth.isAuthenticated()">
+        <li class="nav-items">
+          <a class="nav-link" routerLink="/login" routerLinkAction="active" >Login</a>
+        </li>
+        <li class="nav-items">
+          <a class="nav-link" routerLink="/register" routerLinkAction="active" >Register</a>
+        </li>
+      </ng-template>
+        <li class="nav-items" *ngIf="_auth.isAuthenticated()">
+          <a class="nav-link"  routerLink="/book" routerLinkAction="active" >Book</a>
+        </li>
+        <li class="nav-item" *ngIf="_auth.isAuthenticated()">
+          <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+</div>
+</nav>

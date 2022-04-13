@@ -1,0 +1,9 @@
+.title{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+   text-align: center;
+}
+
+.form-control.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

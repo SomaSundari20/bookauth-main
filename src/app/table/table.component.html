@@ -1,0 +1,23 @@
+<button class="btn btn-warning" (click)="onClick()">Add book</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Bookid</th>
+      <th scope="col">Bookname</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let obj of book'>
+      <th scope="row">{{obj.id}}</th>
+      <td>{{obj.bookid}}</td>
+      <td>{{obj.bookname}}</td>
+      <td>{{obj.author}}</td>
+      <td><a [routerLink]="['/book',obj.id]"  class="btn btn-success" >Update</a>
+        <button class="btn btn-danger" (click)="delete(obj.id)">Delete</button></td>
+    </tr>
+
+  </tbody>
+</table>

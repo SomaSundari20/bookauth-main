@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="loginForm">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="title">Login</div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" name="email" class="form-control" formControlName="email">
+            <span class="help-block" *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched ">
+              Please enter a valid email
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" name="password" class="form-control" formControlName="password">
+          <span class="help-block" *ngIf="!loginForm.get('password') && loginForm.get('password').touched">
+            Password must have minimum 7 characters..
+        </span>
+        </div>
+        <br>
+        <button class="btn btn-info" (click)="onLogin()" [disabled]="!loginForm.valid" >Login</button>
+
+      </div>
+    </div>
+  </form>
+</div>

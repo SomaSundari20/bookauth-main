@@ -1,0 +1,16 @@
+.form-control.ng-invalid.ng-touched{
+    border: 1px solid red;
+
+}
+
+table ,th , td {
+    border :1px solid gray;
+    text-align: center;
+}
+
+h3{
+    color: black;
+    background-color:aqua;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}

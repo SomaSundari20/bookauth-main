@@ -1,0 +1,33 @@
+<div class="container">
+  <form [formGroup]="bookForm" >
+    <div class="row">
+      <div class="col-sm-6">
+        <h5>Book Details</h5>
+        <div class="form-group">
+          <label for="bookid" name="bookid">Book Id</label>
+          <input type="text" name="bookid" class="form-control" formControlName="bookid">
+        </div>
+        <div class="form-group">
+          <label for="bookname" name="bookname">Book Name</label>
+          <input type="text" name="bookname" class="form-control" formControlName="bookname">
+        </div>
+        <div class="form-group">
+          <label for="author" name="author">Author</label>
+          <input type="text" name="author" class="form-control" formControlName="author">
+        </div>
+        <!-- <button class="btn btn-info" (click)="onPublish()" [disabled]="!bookForm.valid ">Publish</button> &nbsp; &nbsp; -->
+        <div *ngIf="!getparamid">
+          <button class="btn btn-warning" (click)="onSave()">Save</button> &nbsp;&nbsp;
+        </div>
+        <div *ngIf="getparamid">
+          <button class="btn btn-warning" (click)="onupdate()">Update</button> &nbsp;&nbsp;
+        </div>
+
+        <br>
+
+      </div>
+
+    </div>
+
+  </form>
+</div>

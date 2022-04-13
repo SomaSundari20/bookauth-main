@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="registerForm">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="title">Register</div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" name="email" class="form-control" formControlName="email">
+            <span class="help-block" *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched ">
+              Please enter a valid email
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" name="password" class="form-control" type="password" formControlName="password">
+          <span class="help-block" *ngIf="!registerForm.get('password') && registerForm.get('password').touched">
+            Password must have minimum 7 characters..
+        </span>
+        </div>
+        <br>
+        <button class="btn btn-info" (click)="onRegister()" [disabled]="!registerForm.valid">Register</button>
+
+      </div>
+    </div>
+  </form>
+</div>
